@@ -5,6 +5,7 @@
   --color-brand-color: #002454;
   --color-sub-color:#E5CDB5;
   --color-point-color:#80BAFF;
+  --color-sale-color:#FE2B00;
   --max-width-inner: 1660px;
 }
 
@@ -20,3 +21,4 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.main-title h2{ font-family: 'Figtree', sans-serif; margin-bottom: 20px;}
