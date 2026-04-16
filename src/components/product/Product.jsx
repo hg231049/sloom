@@ -7,7 +7,7 @@ const Prd_List = [
 ];
 const Product = () => {
     return (
-        <div className='grid grid-cols-2 gap-x-3 gap-y-5'>
+        <div className='grid grid-cols-2 gap-x-3 gap-y-5 lg:grid-cols-4'>
             {Prd_List.map((item) => (
                 <div key={item.id} className="prd-item">
                     <a href={item.link}>
