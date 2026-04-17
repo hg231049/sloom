@@ -7,7 +7,7 @@ const QUICK_MENU_LIST = [
 ];
 const QuickMenu = () => {
     return (
-        <div className="main-quick-menu m-[35px_0_64px] lg:m-[70px_0_120px]">
+        <div className="main-box box1 main-quick-menu m-[35px_0_64px] lg:m-[70px_0_120px]">
             <div className="inner">
                 <div className="flex flex gap-6 justify-between text-xs text-center lg:gap-[60px] lg:justify-center ">
                     {QUICK_MENU_LIST.map((item) => (

@@ -1,7 +1,7 @@
 import Visual from './Visual';
 import QuickMenu from './QuickMenu';
 import Best from './Best';
-
+import LineBn from './LineBn';
 
 const Home = () => {
     return (
@@ -9,6 +9,7 @@ const Home = () => {
             <Visual/>
             <QuickMenu/>
             <Best/>
+            <LineBn/>
         </div>
     )
 }
