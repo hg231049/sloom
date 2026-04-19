@@ -9,9 +9,9 @@ const Bottom_Menu = [
 ];
 const BottomMenu = () => {
     return (
-        <div className="bottomMenu block lg:hidden">
+        <div className="bottomMenu block fixed bottom-0 w-full bg-white border-t border-[#acacac] z-10 lg:hidden">
             <nav>
-                <ul className='flex justify-between py-[10px] [&_li]:flex-1 [&_li]:flex [&_li]:justify-center [&_li]:text-center [&_.icon]:flex [&_.icon]:justify-center [&_.icon]:min-h-[26px]'>
+                <ul className='flex justify-between py-[10px] [&_li]:flex-1 [&_li]:flex [&_li]:justify-center [&_li]:text-center [&_.icon]:flex [&_.icon]:justify-center [&_.icon]:min-h-[24px]'>
                     {Bottom_Menu.map((item) => (
                         <li key={item.id}>
                             <a href={item.link} className=''>

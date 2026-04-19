@@ -10,7 +10,7 @@ const GNB = () => {
         <nav>
             <ul className="flex gap-[48px]">
                 {SUB_MENU_LIST.map((item) => (
-                    <li key={item.id} ><a href={item.link} className="text-brand-color font-bold text-lg">{item.name}</a></li>
+                    <li key={item.id} ><a href={item.link} className="text-black font-bold text-lg">{item.name}</a></li>
                 ))}
             </ul>
         </nav>

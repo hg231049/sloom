@@ -11,7 +11,7 @@ const UserMenu = () => {
             <ul className="flex items-center gap-[7px] lg:gap-[20px]">
                 {User_Menu.map((item) => (
                     <li key={item.id} >
-                        <a href={item.link} className="flex justify-center flex-col gap-[5px] text-brand-color font-normal text-xs text-center leading-none">
+                        <a href={item.link} className="flex justify-center flex-col gap-[5px] text-black font-normal text-xs text-center leading-none">
                             <span className='flex justify-center'><img src={item.icon} alt={item.name} /></span>
                             <div className="hidden lg:block">
                                 {item.name}
