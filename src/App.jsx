@@ -1,17 +1,31 @@
+import { useState, useEffect } from 'react';
 import './App.css';
 import Header from './components/layout/Header';
 import Home from './components/main/Home';
 import Footer from './components/layout/Footer';
+import Loading from './components/layout/Loading';
+import BottomMenu from './components/layout/BottomMenu';
 
 function App() {
+  // 초기에는 로딩 스플래시 나타남(= 숨김처리x)
+  const [isHide,setIsHide] = useState(false);
+  useEffect(() => {
+    // 시간이 지나면 숨김처리
+    const timer = setTimeout(() => {
+      setIsHide(true);
+    },1500)
+    return () => clearTimeout(timer);
+  },[])
 
   return (
     <div className="body">
+      <Loading isHide={isHide}/>
       <Header/>
-      <div className='main'>
+      <div className={`main ${isHide ? 'opacity-100' : 'opacity-0'} transition-opacity duration-1000`}>
         <Home/>
       </div>
       <Footer/>
+      <BottomMenu/>
     </div>
   )
 }

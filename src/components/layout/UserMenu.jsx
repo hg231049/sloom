@@ -8,7 +8,7 @@ const User_Menu = [
 const UserMenu = () => {
     return (
         <div className="userMenu">
-            <ul className="flex gap-[7px] lg:gap-[20px]">
+            <ul className="flex items-center gap-[7px] lg:gap-[20px]">
                 {User_Menu.map((item) => (
                     <li key={item.id} >
                         <a href={item.link} className="flex justify-center flex-col gap-[5px] text-brand-color font-normal text-xs text-center leading-none">
