@@ -21,7 +21,7 @@ const Best = () => {
                 </div>
                 <Product limit={visibleCount}/>
                 {visibleCount < totalProducts && (
-                    <div onClick={handleShowMore} className='more-btn flex justify-center items-center gap-[10px] mt-[30px] p-[12px_10px] text-sm font-bold rounded-[10px] border border-[#c7c7c7] lg:inline-flex lg:relative lg:left-[50%] lg:translate-x-[-50%] lg:p-[16px_20px_16px_32px] lg:text-[18px]'>
+                    <div onClick={handleShowMore} className='more-btn flex justify-center items-center gap-[10px] mt-[30px] p-[12px_10px] text-sm font-medium rounded-[10px] border border-[#c7c7c7] lg:inline-flex lg:relative lg:left-[50%] lg:translate-x-[-50%] lg:mt-[48px] lg:p-[16px_20px_16px_32px] lg:text-[18px]'>
                         상품 더 보기
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
   <path d="M7 10L12.0008 14.58L17 10" stroke="black" stroke-linecap="round" stroke-linejoin="round"></path>

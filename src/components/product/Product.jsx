@@ -19,13 +19,13 @@ const Product = ({ limit }) => {
                             <span className=' block rounded-[5px] overflow-hidden'><img src={item.thumb} alt={item.name} /></span>
                         </div>
                         <div className="prd-description">
-                            <div className="prd-name m-[10px_0_5px] text-sm leading-[18px]">
+                            <div className="prd-name m-[10px_0_5px] text-sm font-bold leading-[18px] lg:text-[22px] lg:m-[16px_0_18px]">
                                 {item.name}
                             </div>
-                            <div className="prd-price-wrap">
-                                <div className='text-xs text-[#ACACAC]'>{item.orgPrice}</div>
-                                <div className='flex gap-[7px] text-base font-bold'>
-                                    <span className='text-sale-color'>{item.percent}</span>
+                            <div className="prd-price-wrap lg:flex lg:flex-row-reverse lg:items-center lg:justify-end lg:gap-[9px]">
+                                <div className='text-xs text-[#ACACAC] line-through lg:text-[18px] '>{item.orgPrice}</div>
+                                <div className='flex gap-[7px] items-center text-base font-bold lg:text-[24px]'>
+                                    <span className='text-sale-color lg:text-[26px]'>{item.percent}</span>
                                     {item.salePrice}
                                 </div>
                             </div>
