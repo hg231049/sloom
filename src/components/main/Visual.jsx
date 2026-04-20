@@ -36,9 +36,9 @@ const Visual = () => {
                         <SwiperSlide key={`${item.id}-${index}`} className='relative transition-transform lg:origin-top ease-in-out duration-500 scale-92 [&.swiper-slide-active]:scale-100'>
                             <a href={item.link}>
                                 <span><img src={item.src} alt={item.alt} className='rounded-[10px] w-full overflow-hidden '/></span>
-                                <div className="main-visual-tit absolute left-[24px] bottom-[62px] text-white ">
-                                    <h2 className='whitespace-pre-wrap text-[30px] font-bold tracking-[-0.528px] leading-[138%]'>{item.desc}</h2>
-                                    <p className='mt-[24px] text-[18px] font-normal tracking-[-0.317px]'>{item.subDesc}</p>
+                                <div className="main-visual-tit absolute left-[24px] bottom-[34px] lg:bottom-[62px] text-white ">
+                                    <h2 className='whitespace-pre-wrap text-[21px] lg:text-[30px] font-bold tracking-[-0.528px] leading-[138%]'>{item.desc}</h2>
+                                    <p className='mt-[12px] lg:mt-[24px] text-[14px] lg:text-[18px] font-normal tracking-[-0.317px]'>{item.subDesc}</p>
                                 </div>
                             </a>
                         </SwiperSlide>
