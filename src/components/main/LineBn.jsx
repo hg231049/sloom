@@ -3,13 +3,13 @@ import { Autoplay } from 'swiper/modules';
 import { lineBn1,lineBn2,lineBnMo1,lineBnMo2 } from '../../assets/main';
 
 const Line_Bn = [
-  { id: 1, alt:"슬라이드 띠배너1", link: "/logout", pc: lineBn1, mo: lineBnMo1 },
-  { id: 2, alt:"슬라이드 띠배너2", link: "/logout", pc: lineBn2, mo: lineBnMo2},
+  { id: 1, alt:"슬라이드 띠배너1", link: "#none", pc: lineBn1, mo: lineBnMo1 },
+  { id: 2, alt:"슬라이드 띠배너2", link: "#none", pc: lineBn2, mo: lineBnMo2},
 ];
 
 const LineBn = () => {
     return (
-            <div className="main-box box3 line-bn w-full mb-[70px] ">
+            <div className="main-box box3 line-bn w-full mt-[70px] lg:mt-[120px] ">
                 <Swiper
                     modules={[Autoplay]} 
                     slidesPerView={1}

@@ -1,8 +1,8 @@
 
 const Policy_Menu = [
-  { id: 1, name: "주식회사 올릿리테일", link: "/logout", textDeco:true},
-  { id: 2, name: "개인정보처리방침", link: "/join" , highlight: true},
-  { id: 3, name: "이용약관", link: "/join" },
+  { id: 1, name: "주식회사 올릿리테일", link: "#none", textDeco:true},
+  { id: 2, name: "개인정보처리방침", link: "#none" , highlight: true},
+  { id: 3, name: "이용약관", link: "#none" },
 ];
 const FooterPolicy = () => {
     return (

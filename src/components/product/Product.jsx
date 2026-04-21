@@ -1,41 +1,35 @@
-
 import { prd1 } from '../../assets/main';
+import ProductCard from './ProductCard';
+import ProductHorizontal from './ProductHorizontal';
 
-const Product = ({ limit }) => {
+const Product = ({ limit, type }) => {
     const Prd_List = [
-        { id: 1, name: "종아리편한케어 프리미엄 종아리 마사지기", link: "/logout", orgPrice:"260,000원", salePrice:"149,000원",percent:"43%",thumb:prd1 },
-        { id: 2, name: "발편한케어 V2 프리미엄 발 마사지기", link: "/logout", orgPrice:"200,000원", salePrice:"109,000원",percent:"43%",thumb:prd1 },
-        { id: 3, name: "발편한케어 V2 프리미엄 발 마사지기", link: "/logout", orgPrice:"260,000원", salePrice:"149,000원",percent:"43%",thumb:prd1 },
-        { id: 4, name: "종아리편한케어 프리미엄 종아리 마사지기", link: "/logout", orgPrice:"200,000원", salePrice:"109,000원",percent:"43%",thumb:prd1 },
+        { id: 1, name: "종아리편한케어 프리미엄 종아리 마사지기", summary: "프리미엄 EMS저주파", link: "#none", orgPrice: "260,000원", salePrice: "149,000원", percent: "43%", thumb: prd1 },
+        { id: 2, name: "발편한케어 V2 프리미엄 발 마사지기", summary: "프리미엄 EMS저주파", link: "#none", orgPrice: "200,000원", salePrice: "109,000원", percent: "43%", thumb: prd1 },
+        { id: 3, name: "발편한케어 V2 프리미엄 발 마사지기", summary: "", link: "#none", orgPrice: "260,000원", salePrice: "149,000원", percent: "43%", thumb: prd1 },
+        { id: 4, name: "종아리편한케어 프리미엄 종아리 마사지기", summary: "", link: "#none", orgPrice: "200,000원", salePrice: "109,000원", percent: "43%", thumb: prd1 },
     ];
 
+    // ✅ 타입에 따라 그리드/플렉스 레이아웃 결정
+    const containerClass = type === 'new'
+        ? "flex flex-col gap-0 " // New는 세로로 쌓기
+        : "grid grid-cols-2 gap-x-3 gap-y-5 lg:grid-cols-4"; // 기본은 격자형
+
     return (
-        <div className='grid grid-cols-2 gap-x-3 gap-y-5 lg:grid-cols-4'>
-            {[...Prd_List,...Prd_List].slice(0, limit).map((item,index) => (
-                <div key={item.id} className="prd-item">
+        <div className={`prd-list ${containerClass}`}>
+            {[...Prd_List,...Prd_List].slice(0, limit).map((item, index) => (
+                <div className='prd-item [.new_&]:mb-[10px] [.new_&]:pb-[10px] [.new_&]:border-b [.new_&]:border-[rgba(192,192,192,0.2)] [.new_&]:last:border-0' key={`${item.id}-${index}`}>
                     <a href={item.link}>
-                        <div className="prd-thumb relative">
-                            <span className='index absolute p-[7px_11px] text-white text-sm leading-none bg-brand-color rounded-[5px_0]'>{index + 1}</span>
-                            <span className=' block rounded-[5px] overflow-hidden'><img src={item.thumb} alt={item.name} /></span>
-                        </div>
-                        <div className="prd-description">
-                            <div className="prd-name m-[10px_0_5px] text-sm font-bold leading-[18px] lg:text-[22px] lg:m-[16px_0_18px]">
-                                {item.name}
-                            </div>
-                            <div className="prd-price-wrap lg:flex lg:flex-row-reverse lg:items-center lg:justify-end lg:gap-[9px]">
-                                <div className='text-xs text-[#ACACAC] line-through lg:text-[18px] '>{item.orgPrice}</div>
-                                <div className='flex gap-[7px] items-center text-base font-bold lg:text-[24px]'>
-                                    <span className='text-sale-color lg:text-[26px]'>{item.percent}</span>
-                                    {item.salePrice}
-                                </div>
-                            </div>
-                        </div>
+                        {type === 'new' ? (
+                            <ProductHorizontal item={item} index={index} />
+                        ) : (
+                            <ProductCard item={item} index={index} showIndex={type === 'best'} />
+                        )}
                     </a>
                 </div>
             ))}
         </div>
-    )
+    );
 }
-
 
 export default Product;

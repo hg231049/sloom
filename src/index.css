@@ -1,5 +1,16 @@
 @import "tailwindcss";
+@tailwind utilities;
 
+@layer utilities {
+  .animate-gradient-flow {
+    animation: gradient-flow 3s linear infinite;
+  }
+
+  @keyframes gradient-flow {
+    0% { background-position: 200% center; }
+    100% { background-position: 0% center; }
+  }
+} 
 @theme {
   /* 여기서 바로 변수를 등록하면 Tailwind 클래스가 생성됩니다 */
   --color-brand-color: #002454;
@@ -11,7 +22,7 @@
 
 @layer components {
   .inner {
-    @apply max-w-(--max-width-inner) mx-auto px-[20px] w-full;
+    @apply max-w-(--max-width-inner) mx-auto px-[20px] w-full overflow-hidden;
   }
 }
 
@@ -21,4 +32,4 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.main-title h2{ font-family: 'Figtree', sans-serif; margin-bottom: 20px;}
+.main-title h2{ font-family: 'Figtree', sans-serif; }

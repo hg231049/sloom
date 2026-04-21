@@ -23,4 +23,5 @@ import lineBn2 from './line-bn2.png';
 import lineBnMo1 from './line-bn-mo1.png';
 import lineBnMo2 from './line-bn-mo2.png';
 import prd1 from './prd1.png';
-export { logo,iconLogout, iconMy, iconCart, arrowRight,fixedIconMy,fixedIconCate,fixedIconCart,fixedIconHome,fixedIconSearch, mainVisual1,mainVisual2,mainVisual3,mainVisual4,mainVisual5,quickIcon1,quickIcon2,quickIcon3,quickIcon4,prd1,lineBn1,lineBn2,lineBnMo1,lineBnMo2 };
+import prd2 from './prd1.webp';
+export { logo,iconLogout, iconMy, iconCart, arrowRight,fixedIconMy,fixedIconCate,fixedIconCart,fixedIconHome,fixedIconSearch, mainVisual1,mainVisual2,mainVisual3,mainVisual4,mainVisual5,quickIcon1,quickIcon2,quickIcon3,quickIcon4,prd1,prd2,lineBn1,lineBn2,lineBnMo1,lineBnMo2 };

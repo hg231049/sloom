@@ -1,8 +1,8 @@
 import { arrowRight } from '../../assets/main';
 
 const Business_Menu = [
-  { id: 1, name: "단체 선물", link: "/logout" },
-  { id: 2, name: "수출/해외협력", link: "/join" },
+  { id: 1, name: "단체 선물", link: "#none" },
+  { id: 2, name: "수출/해외협력", link: "#none" },
 ];
 const FooterBusiness = () => {
     return (

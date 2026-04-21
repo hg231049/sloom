@@ -9,6 +9,15 @@ export default {
       colors: {
         brandColor: '#002454',
       },
+      keyframes: {
+        'gradient-flow': {
+          '0%': { 'background-position': '200% center' },
+          '100%': { 'background-position': '0% center' },
+        }
+      },
+      animation: {
+        'gradient-flow': 'gradient-flow 3s linear infinite',
+      },
     },
   },
   plugins: [],

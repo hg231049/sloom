@@ -1,9 +1,9 @@
 const SUB_MENU_LIST = [
-  { id: 1, name: "신규 회원 혜택", link: "/new" },
-  { id: 2, name: "제품 사용법", link: "/howToUse" },
-  { id: 3, name: "브랜드", link: "/brand" },
-  { id: 4, name: "고객지원", link: "/service" },
-  { id: 5, name: "비즈니스 제안", link: "/business" },
+  { id: 1, name: "신규 회원 혜택", link: "#none" },
+  { id: 2, name: "제품 사용법", link: "#none" },
+  { id: 3, name: "브랜드", link: "#none" },
+  { id: 4, name: "고객지원", link: "#none" },
+  { id: 5, name: "비즈니스 제안", link: "#none" },
 ];
 const GNB = () => {
     return (
