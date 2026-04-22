@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Product from '../product/Product'
 
-const New = ({ type }) => {
+const New = ({ type,onAddCart }) => {
     // 1. 초기 노출 상품 4개
     const [visibleCount,setVisibleCount] = useState(2);
 
@@ -23,7 +23,7 @@ const New = ({ type }) => {
                         </video>
                     </div>
                     <div className="prd-box max-w-[695px]">
-                        <Product type={type} limit={visibleCount}/>
+                        <Product type={type} limit={visibleCount} onAddCart={onAddCart}/>
                     </div>
                 </div>
             </div>

@@ -4,16 +4,15 @@ import Best from './Best';
 import LineBn from './LineBn';
 import New from './New';
 
-
-const Home = () => {
-
+const Home = ({onAddCart}) => {
+    
     return (
         <div className="main-wrap">
             <Visual/>
             <QuickMenu/>
-            <Best type="best"/>
+            <Best type="best" onAddCart={onAddCart}/>
             <LineBn/>
-            <New type="new"/>
+            <New type="new" onAddCart={onAddCart}/>
         </div>
     )
 }

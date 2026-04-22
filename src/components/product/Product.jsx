@@ -1,12 +1,12 @@
-import { prd1 } from '../../assets/main';
+import { prd1,prd2 } from '../../assets/main';
 import ProductCard from './ProductCard';
 import ProductHorizontal from './ProductHorizontal';
 
-const Product = ({ limit, type }) => {
+const Product = ({ limit, type,onAddCart }) => {
     const Prd_List = [
         { id: 1, name: "종아리편한케어 프리미엄 종아리 마사지기", summary: "프리미엄 EMS저주파", link: "#none", orgPrice: "260,000원", salePrice: "149,000원", percent: "43%", thumb: prd1 },
-        { id: 2, name: "발편한케어 V2 프리미엄 발 마사지기", summary: "프리미엄 EMS저주파", link: "#none", orgPrice: "200,000원", salePrice: "109,000원", percent: "43%", thumb: prd1 },
-        { id: 3, name: "발편한케어 V2 프리미엄 발 마사지기", summary: "", link: "#none", orgPrice: "260,000원", salePrice: "149,000원", percent: "43%", thumb: prd1 },
+        { id: 2, name: "발편한케어 V2 프리미엄 발 마사지기", summary: "프리미엄 EMS저주파", link: "#none", orgPrice: "200,000원", salePrice: "109,000원", percent: "43%", thumb: prd2 },
+        { id: 3, name: "발편한케어 V2 프리미엄 발 마사지기", summary: "", link: "#none", orgPrice: "260,000원", salePrice: "149,000원", percent: "43%", thumb: prd2 },
         { id: 4, name: "종아리편한케어 프리미엄 종아리 마사지기", summary: "", link: "#none", orgPrice: "200,000원", salePrice: "109,000원", percent: "43%", thumb: prd1 },
     ];
 
@@ -21,9 +21,9 @@ const Product = ({ limit, type }) => {
                 <div className='prd-item [.new_&]:mb-[10px] [.new_&]:pb-[10px] [.new_&]:border-b [.new_&]:border-[rgba(192,192,192,0.2)] [.new_&]:last:border-0' key={`${item.id}-${index}`}>
                     <a href={item.link}>
                         {type === 'new' ? (
-                            <ProductHorizontal item={item} index={index} />
+                            <ProductHorizontal item={item} index={index} onAddCart={onAddCart}/>
                         ) : (
-                            <ProductCard item={item} index={index} showIndex={type === 'best'} />
+                            <ProductCard item={item} index={index} showIndex={type === 'best'} onAddCart={onAddCart}/>
                         )}
                     </a>
                 </div>

@@ -2,9 +2,9 @@ import { IconMy, IconCart } from '../icon/Icon';
 
 const User_Menu = [
   { id: 2, name: "회원가입", link: "#none", icon:IconMy },
-  { id: 3, name: "장바구니", link: "#none", icon:IconCart },
+  { id: 3, name: "장바구니", link: "#none", icon:IconCart, cartCnt:true  },
 ];
-const UserMenu = () => {
+const UserMenu = ({cartCount}) => {
     return (
         <div className="userMenu">
             <ul className="flex items-center gap-[7px] lg:gap-[20px]">
@@ -14,8 +14,9 @@ const UserMenu = () => {
                     return (
                         <li key={item.id} >
                             <a href={item.link} className="flex justify-center flex-col gap-[5px] text-black font-normal text-xs text-center leading-none">
-                                <span className='flex justify-center'>
+                                <span className='flex justify-center relative'>
                                     {Icon && <Icon className="w-6 h-6 text-black" />}
+                                    <em className={`absolute bottom-[-7%] right-0 w-[12px] h-[12px] leading-[12px] not-italic text-[10px] text-white bg-brand-color rounded-[100%] ${item.cartCnt ? "block" : "hidden"}`}>{cartCount}</em>
                                 </span>
                                 <div className="hidden lg:block">
                                     {item.name}

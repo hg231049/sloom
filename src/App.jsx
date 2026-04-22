@@ -7,25 +7,34 @@ import Loading from './components/layout/Loading';
 import BottomMenu from './components/layout/BottomMenu';
 
 function App() {
+  // 1. 로딩 스플래시
   // 초기에는 로딩 스플래시 나타남(= 숨김처리x)
   const [isHide,setIsHide] = useState(false);
   useEffect(() => {
     // 시간이 지나면 숨김처리
     const timer = setTimeout(() => {
-      setIsHide(true);
-    },1500)
-    return () => clearTimeout(timer);
-  },[])
+        setIsHide(true);
+      },1500)
+      return () => clearTimeout(timer);
+    },[])
+
+    // 2. 장바구니 카운트
+    const [cartCount,setCartCount] = useState(0);
+
+    const addToCart = () => {
+      setCartCount(prev => prev + 1)
+      alert("장바구니에 추가되었습니다");
+    }
 
   return (
     <div className="body">
       <Loading isHide={isHide}/>
-      <Header/>
+      <Header cartCount={cartCount}/>
       <div className={`main ${isHide ? 'opacity-100' : 'opacity-0'} transition-opacity duration-1000`}>
-        <Home/>
+        <Home onAddCart={addToCart}/>
       </div>
       <Footer/>
-      <BottomMenu/>
+      <BottomMenu cartCount={cartCount} />
     </div>
   )
 }

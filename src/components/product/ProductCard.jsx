@@ -1,6 +1,8 @@
 import ProductPrice from './ProductPrice';
+import { IconCart } from '../icon/Icon';
+
 // 2. 카드형 (Best 섹션용)
-const ProductCard = ({ item, index, showIndex }) => (
+const ProductCard = ({ item, index, showIndex,onAddCart }) => (
   <div className="prd-item">
     <div className="prd-thumb relative rounded-[5px] overflow-hidden">
         {/* 2. showIndex가 true일 때만 렌더링 */}
@@ -11,6 +13,15 @@ const ProductCard = ({ item, index, showIndex }) => (
         )}
         <span className='block overflow-hidden'>
             <img src={item.thumb} alt={item.name} className="w-full" />
+        </span>
+        <span className="cart absolute bottom-[10px] right-[10px]" 
+            onClick={(e) => {
+                e.preventDefault(); // 링크 이동 방지
+                e.stopPropagation(); // 이벤트 버블링 방지 (안전장치)
+                onAddCart();
+            }}
+        >
+            <IconCart/>
         </span>
     </div>
     <div className="prd-description">

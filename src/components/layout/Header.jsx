@@ -5,7 +5,7 @@ import GNB from './GNB';
 import UserMenu from './UserMenu';
 import Logo from './Logo';
 
-const Header = () => {
+const Header = ({cartCount}) => {
     // 초기 상태에는 고정x
     const [isFixed, setIsFixed] = useState(false);
 
@@ -37,7 +37,7 @@ const Header = () => {
                         <div className="hidden lg:block">
                             <SUBGNB/>
                         </div>
-                        <UserMenu/>
+                        <UserMenu cartCount={cartCount}/>
                     </div>
                 </div>
                 
