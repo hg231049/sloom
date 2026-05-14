@@ -5,6 +5,7 @@ import Home from './components/main/Home';
 import Footer from './components/layout/Footer';
 import Loading from './components/layout/Loading';
 import BottomMenu from './components/layout/BottomMenu';
+import SlideMenu from './components/layout/SlideMenu';
 
 function App() {
   // 1. 로딩 스플래시
@@ -26,15 +27,25 @@ function App() {
       alert("장바구니에 추가되었습니다");
     }
 
+    // 2. 모바일 햄버거 메뉴
+    const [menuOpen,setMenuOpen] = useState(null);
+
+    const onClickMenuBar = () => {
+      setMenuOpen((prev)=>!prev)
+    }
+
   return (
     <div className="body">
       <Loading isHide={isHide}/>
-      <Header cartCount={cartCount}/>
+      <Header cartCount={cartCount} />
       <div className={`main ${isHide ? 'opacity-100' : 'opacity-0'} transition-opacity duration-1000`}>
         <Home onAddCart={addToCart}/>
       </div>
       <Footer/>
-      <BottomMenu cartCount={cartCount} />
+      <BottomMenu cartCount={cartCount} onClickMenuBar={onClickMenuBar} />
+      {menuOpen &&
+        <SlideMenu onClickMenuBar={onClickMenuBar}/>
+      }
     </div>
   )
 }

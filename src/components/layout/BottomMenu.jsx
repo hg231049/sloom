@@ -7,16 +7,22 @@ const Bottom_Menu = [
     { id: 4, name: "장바구니", link: "#none", icon:IconCart, cartCnt:true },
     { id: 5, name: "검색", link: "#none", icon:IconSearch },
 ];
-const BottomMenu = ({cartCount}) => {
+const BottomMenu = ({cartCount,onClickMenuBar}) => {
     return (
         <div className="bottomMenu block fixed bottom-0 w-full bg-white border-t border-[#acacac] z-10 lg:hidden">
             <nav>
                 <ul className='flex justify-between py-[10px] [&_li]:flex-1 [&_li]:flex [&_li]:justify-center [&_li]:text-center [&_.icon]:flex [&_.icon]:justify-center [&_.icon]:min-h-[24px]'>
                     {Bottom_Menu.map((item) => {
                         const Icon = item.icon;
+                        const handleClick = (e) => {
+                            if(item.id === 1){
+                                e.preventDefault();
+                                onClickMenuBar();
+                            }
+                        }
                         return (
                             <li key={item.id}>
-                                <a href={item.link} className=''>
+                                <a href={item.link} onClick={handleClick}>
                                     <span className="icon relative">
                                         {Icon && <Icon className="w-6 h-6 text-blac" />}
                                         <em className={`absolute bottom-[-7%] right-[20%] w-[12px] h-[12px] leading-[12px] not-italic text-[10px] text-white bg-brand-color rounded-[100%] ${item.cartCnt ? "block" : "hidden"}`}>{cartCount}</em>
