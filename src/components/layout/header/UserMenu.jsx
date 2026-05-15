@@ -1,0 +1,33 @@
+import { IconMy, IconCart } from '../../icon/Icon';
+
+const User_Menu = [
+  { id: 2, name: "회원가입", link: "#none", icon:IconMy },
+  { id: 3, name: "장바구니", link: "#none", icon:IconCart, cartCnt:true  },
+];
+const UserMenu = ({cartCount}) => {
+    return (
+        <div className="userMenu">
+            <ul className="flex items-center gap-[7px] lg:gap-[20px]">
+                {User_Menu.map((item) => {
+                    const Icon = item.icon;
+
+                    return (
+                        <li key={item.id} >
+                            <a href={item.link} className="flex justify-center flex-col gap-[5px] text-black font-normal text-xs text-center leading-none">
+                                <span className='flex justify-center relative'>
+                                    {Icon && <Icon className="w-6 h-6 text-black" />}
+                                    <em className={`flex justify-center items-center absolute bottom-[-7%] right-0 w-[12px] h-[12px] leading-[12px] not-italic text-[10px] text-white bg-brand-color rounded-[100%] lg:right-[6px] ${item.cartCnt ? "block" : "hidden"}`}>{cartCount}</em>
+                                </span>
+                                <div className="hidden lg:block">
+                                    {item.name}
+                                </div>
+                            </a>
+                        </li>
+                    )
+                })}
+            </ul>
+        </div>
+    );
+}
+
+export default UserMenu;

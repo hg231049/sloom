@@ -1,11 +1,14 @@
 import { useState, useEffect } from 'react';
 import './App.css';
-import Header from './components/layout/Header';
+import Header from './components/layout/header/Header';
 import Home from './components/main/Home';
-import Footer from './components/layout/Footer';
+import Footer from './components/layout/footer/Footer';
 import Loading from './components/layout/Loading';
 import BottomMenu from './components/layout/BottomMenu';
 import SlideMenu from './components/layout/slideMenu/SlideMenu';
+import List from './components/layout/productList/List';
+import SearchList from './components/layout/productList/SearchList';
+import { ProductData } from './components/product/ProductData'
 
 function App() {
   // 1. 로딩 스플래시
@@ -55,7 +58,9 @@ function App() {
       <Loading isHide={isHide}/>
       <Header cartCount={cartCount} />
       <div className={`main ${isHide ? 'opacity-100' : 'opacity-0'} transition-opacity duration-1000`}>
-        <Home onAddCart={addToCart}/>
+       <Home  prdData={ProductData} onAddCart={addToCart}/>
+         {/*<List prdData={ProductData} onAddCart={addToCart}/>
+        <SearchList prdData={ProductData} onAddCart={addToCart} search={search} onChangeSearch={onChangeSearch}/>*/}
       </div>
       <Footer/>
       <BottomMenu cartCount={cartCount} onClickMenuBar={onClickMenuBar} />

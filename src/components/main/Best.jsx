@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Product from '../product/Product'
 
-const Best = ({type,onAddCart}) => {
+const Best = ({type,onAddCart,prdData}) => {
 
     // 1. 초기 노출 상품 4개
     const [visibleCount,setVisibleCount] = useState(4);
@@ -18,7 +18,7 @@ const Best = ({type,onAddCart}) => {
                 <div className="main-title mb-5 lg:mb-10">
                     <h2 className="text-2xl font-bold lg:text-center lg:text-[36px]">SLOOM BEST</h2>
                 </div>
-                <Product type={type} limit={visibleCount} onAddCart={onAddCart}/>
+                <Product items={prdData} type={type} limit={visibleCount} onAddCart={onAddCart}/>
                 {visibleCount < totalProducts && (
                     <div onClick={handleShowMore} className='more-btn flex justify-center items-center gap-[10px] mt-[30px] p-[12px_10px] text-sm font-medium rounded-[10px] border border-[#c7c7c7] lg:inline-flex lg:relative lg:left-[50%] lg:translate-x-[-50%] lg:mt-[48px] lg:p-[16px_20px_16px_32px] lg:text-[18px]'>
                         상품 더 보기
