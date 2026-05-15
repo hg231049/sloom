@@ -7,7 +7,7 @@ const ProductCard = ({ item, index, showIndex,onAddCart }) => (
     <div className="prd-thumb relative rounded-[5px] overflow-hidden">
         {/* 2. showIndex가 true일 때만 렌더링 */}
         {showIndex && (
-            <span className='absolute top-0 left-0 p-[7px_11px] text-white text-sm leading-none bg-brand-color rounded-[5px_0] z-10'>
+            <span className='absolute top-0 left-0 p-[7px_11px] text-white text-sm leading-none bg-brand-color rounded-[5px_0] z-10 lg:p-[13px_20px] lg:text-[24px]'>
                 {index + 1}
             </span>
         )}

@@ -5,7 +5,7 @@ import Home from './components/main/Home';
 import Footer from './components/layout/Footer';
 import Loading from './components/layout/Loading';
 import BottomMenu from './components/layout/BottomMenu';
-import SlideMenu from './components/layout/SlideMenu';
+import SlideMenu from './components/layout/slideMenu/SlideMenu';
 
 function App() {
   // 1. 로딩 스플래시
@@ -31,8 +31,24 @@ function App() {
     const [menuOpen,setMenuOpen] = useState(false);
 
     const onClickMenuBar = () => {
-      setMenuOpen((prev)=>!prev)
+      setMenuOpen((prev)=>!prev);
     }
+    // menuOpen 상태가 바뀔 때마다 실행
+     useEffect(() => {
+      if(menuOpen){
+        document.body.style.overflow = "hidden";
+        } else {
+          document.body.style.overflow = "unset";
+        }
+        // 컴포넌트가 언마운트(사라질) 때 스크롤 초기화 (안전장치)
+        return () => { document.body.style.overflow = "unset"; }
+    },[menuOpen])
+
+    // 3. 검색
+    const [search,setSearch] = useState("");
+    const onChangeSearch = (e) => {
+        setSearch(e.target.value);
+    } 
 
   return (
     <div className="body">
@@ -43,7 +59,7 @@ function App() {
       </div>
       <Footer/>
       <BottomMenu cartCount={cartCount} onClickMenuBar={onClickMenuBar} />
-      <SlideMenu onClickMenuBar={onClickMenuBar} menuOpen={menuOpen}/>
+      <SlideMenu onClickMenuBar={onClickMenuBar} menuOpen={menuOpen} cartCount={cartCount} search={search} onChangeSearch={onChangeSearch}/>
     </div>
   )
 }

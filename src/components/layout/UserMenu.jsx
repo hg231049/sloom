@@ -16,7 +16,7 @@ const UserMenu = ({cartCount}) => {
                             <a href={item.link} className="flex justify-center flex-col gap-[5px] text-black font-normal text-xs text-center leading-none">
                                 <span className='flex justify-center relative'>
                                     {Icon && <Icon className="w-6 h-6 text-black" />}
-                                    <em className={`absolute bottom-[-7%] right-0 w-[12px] h-[12px] leading-[12px] not-italic text-[10px] text-white bg-brand-color rounded-[100%] ${item.cartCnt ? "block" : "hidden"}`}>{cartCount}</em>
+                                    <em className={`flex justify-center items-center absolute bottom-[-7%] right-0 w-[12px] h-[12px] leading-[12px] not-italic text-[10px] text-white bg-brand-color rounded-[100%] lg:right-[6px] ${item.cartCnt ? "block" : "hidden"}`}>{cartCount}</em>
                                 </span>
                                 <div className="hidden lg:block">
                                     {item.name}
