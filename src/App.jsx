@@ -62,7 +62,8 @@ function App() {
           <Header cartCount={cartCount} />
           <div className={`main ${isHide ? 'opacity-100' : 'opacity-0'} transition-opacity duration-1000`}>
             <Routes>
-              <Route path='/home' element={<Home  prdData={ProductData} onAddCart={addToCart}/>}/>
+              <Route path="/" element={<Navigate to="/home" />} />
+              <Route path='/' element={<Home  prdData={ProductData} onAddCart={addToCart}/>}/>
               <Route path='/list' element={<List prdData={ProductData} onAddCart={addToCart}/>}/>
               <Route path='/searchList' element={<SearchList prdData={ProductData} onAddCart={addToCart} search={search} onChangeSearch={onChangeSearch}/>}/>
             </Routes>
