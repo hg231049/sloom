@@ -50,7 +50,7 @@ const ProductDetail = ({prdData}) => {
                             <div className='text-[#ACACAC] text-[20px] font-medium line-through'>{product.orgPrice}</div>
                        </div>
                        <ul className='flex flex-col gap-[14px]'>
-                        {product.desc.map((descItem, idx) => 
+                        {product.desc?.map((descItem, idx) => 
                             <li
                                 key={idx}
                                 dangerouslySetInnerHTML={{ __html: descItem }}
@@ -63,7 +63,7 @@ const ProductDetail = ({prdData}) => {
                             <p className='font-bold text-md'>총 구매 금액</p>	
                             <div className='h-[28px] px-3 leading-[28px] border border-[#d3d3d3] rounded-[5px] [&_button]:text-[#d3d3d3] [&_button]:cursor-pointer'>
                                 <button onClick={onClickMinus}>-</button>				
-                                <input value={totalCount} className='w-[30px] text-center'/>
+                                <input readOnly value={totalCount} className='w-[30px] text-center'/>
                                 <button onClick={onClickPlus}>+</button>	
                             </div>		
                         </div>
