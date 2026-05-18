@@ -12,6 +12,9 @@ const SearchList = ({onAddCart,search,onChangeSearch,prdData}) => {
 
     const filteredData = getFilteredSearch();
 
+    // 상품 갯수
+    const searchPrdTotal = filteredData.length;
+
     return (
         <div className="pb-[120px]">
             <div className="inner">
@@ -21,6 +24,9 @@ const SearchList = ({onAddCart,search,onChangeSearch,prdData}) => {
                         <input value={search} onChange={onChangeSearch} type="text" placeholder='검색어를 입력해 주세요' className='w-full h-[50px] border-b boder-black text-md'/>
                         <button className='absolute top-1/2 right-0 -translate-y-1/2'><IconSearch/></button>
                     </div>
+                </div>
+                <div className="flex pb-2">
+                    <p>{searchPrdTotal}개의 상품</p>
                 </div>
                 {filteredData.length > 0 ? (
                     <Product items={filteredData} type="list" onAddCart={onAddCart} />

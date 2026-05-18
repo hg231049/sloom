@@ -16,7 +16,7 @@ const Product = ({ items, limit, type,onAddCart }) => {
 
     return (
         <div className={`prd-list ${containerClass}`}>
-            {[...displayList,...displayList].slice(0, limit).map((item, index) => (
+            {[...displayList].slice(0, limit).map((item, index) => (
                 <div className='prd-item [.new_&]:mb-[10px] [.new_&]:pb-[10px] [.new_&]:border-b [.new_&]:border-[rgba(192,192,192,0.2)] [.new_&]:last:border-0' key={`${item.id}-${index}`}>
                     <a href={item.link}>
                         {type === 'new' ? (

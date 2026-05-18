@@ -6,7 +6,7 @@ const cateMenu = [
             { id: 1, name: "전상품", link: "#none"},
             { id: 2, name: "단독세트", link: "#none"},
             { id: 3, name: "베스트", link: "#none"},
-            { id: 3, name: "전상품", link: "#none"},
+            { id: 4, name: "전상품", link: "#none"},
         ]
     },
     {   

@@ -42,7 +42,7 @@ const Header = ({cartCount}) => {
                 </div>
                 
             </div>
-            <div className={`fixed-gnb w-full transition-all ${isFixed ? 'fixed top-0 left-0 bg-white/35 backdrop-blur-md shadow-md z-10' : 'relative'}`}>
+            <div className={`fixed-gnb w-full transition-all ${isFixed ? 'fixed top-0 left-0 bg-white/35 backdrop-blur-md shadow-md z-20' : 'relative'}`}>
                 <div className="inner">
                     <GNB/>
                 </div>
