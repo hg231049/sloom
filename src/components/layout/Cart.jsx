@@ -16,8 +16,10 @@ const Cart = ({ cart, type }) => {
     e.preventDefault();
     e.stopPropagation();
 
+    // 기존 수량표(prev)를 그대로 복사하고,
+    // 방금 클릭한 상품(id)의 수량만 1 증가시켜줘
     setCounts((prev) => ({
-      ...prev, // 기존 수량 정보
+      ...prev, // 기존 수량 정보(현재 counts의 최신값) prev는 리액트가 보장해주는 최신 상태
       [id]: (prev[id] || 1) + 1, //prev[id]가 있으면 기존 수량을 쓰고, 없으면 기본값 1
     }));
   };
@@ -28,12 +30,14 @@ const Cart = ({ cart, type }) => {
 
     setCounts((prev) => ({
       ...prev,
-      [id]: Math.max((prev[id] || 1) - 1, 1), //수량이 1보다 작아지지 않도록
+      [id]: Math.max((prev[id] || 1) - 1, 1), //수량이 1보다 작아지지 않도록. 둘 중 더 큰 값을 선택
     }));
   };
 
   
     // reduce는 배열을 돌면서 값을 하나로 합치는 함수
+    // 장바구니 상품들의 가격 × 수량을 전부 더해서
+    // 총 주문 금액 하나를 만들기 위해서
   const totalCartPrice = cart.reduce((sum, item) => {
     const count = counts[item.id] || 1;
     const price = getPriceNumber(item.salePrice);
