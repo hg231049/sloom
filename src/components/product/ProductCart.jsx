@@ -29,9 +29,9 @@ const ProductCart = ({ item, counts, onClickPlus, onClickMinus }) => {
                     <button onClick={(e) => onClickPlus(e, item.id)} className='z-10'>+</button>	
                 </div>	
             </div>
-            <div className='flex items-center gap-[5px] text-brand-color text-[24px] font-bold'>
+            <div className='flex flex-col items-center gap-[5px] text-brand-color lg:text-[24px] font-bold lg:flex-row'>
                 {totalPrice.toLocaleString()}원
-                <span className='text-sm font-normal text-black'>({count})개</span>
+                <span className='hidden text-sm font-normal text-black lg:block'>({count})개</span>
             </div>
         </div>
         
