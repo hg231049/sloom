@@ -15,11 +15,13 @@ const ProductCart = ({ item, counts, onClickPlus, onClickMinus,onDeleteCart }) =
 
     return (
     <div className="flex gap-[10px] items-center lg:gap-[20px]">
+        {/* 상품썸네일 */}
         <div className="prd-thumb relative max-w-[105px] rounded-[5px] overflow-hidden flex-shrink-0 lg:max-w-[100px]">
             <img src={item.thumb} alt={item.name} className='w-full' />
         </div>
         <div className="prd-description flex items-end justify-between w-full gap-[10px] min-w-0">
-            <div >
+            {/* 상품정보, 수량선택 */}
+            <div>
                 <div className='mb-4 lg:flex lg:flex-col-reverse min-w-0'>
                     <div className="text-sm font-bold leading-[18px] truncate line-clamp-1 lg:text-[20px] lg:leading-[190%]">{item.name}</div>
                 </div>
@@ -29,6 +31,7 @@ const ProductCart = ({ item, counts, onClickPlus, onClickMinus,onDeleteCart }) =
                     <button onClick={(e) => onClickPlus(e, item.id)} className='z-10'>+</button>	
                 </div>	
             </div>
+            {/* 가격 + 삭제 버튼 */}
             <div className='flex items-center gap-[5px] text-brand-color lg:text-[24px] font-bold lg:flex-row'>
                 {totalPrice.toLocaleString()}원
                 <span className='hidden text-sm font-normal text-black lg:block'>({count})개</span>
