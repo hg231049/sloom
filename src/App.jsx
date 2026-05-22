@@ -11,8 +11,8 @@ import List from './components/layout/productList/List';
 import SearchList from './components/layout/productList/SearchList';
 import ProductDetail from './components/layout/ProductDetail';
 import Cart from './components/layout/Cart';
-import { ProductData } from './components/product/ProductData'
 import ScrollToTop from "./components/layout/ScrollToTop";
+import { ProductData } from './components/product/ProductData'
 function App() {
   // 1. 로딩 스플래시
   // 초기에는 로딩 스플래시 나타남(= 숨김처리x)
@@ -46,6 +46,13 @@ function App() {
 
       setCart([...cart,ProductData])
       alert("장바구니에 추가되었습니다");
+    }
+
+    const onDeleteCart = (e,id) => {
+       e.preventDefault();
+      e.stopPropagation();
+
+      setCart(prev=>prev.filter(item => item.id !== id))
     }
 
     // 2. 모바일 햄버거 메뉴
@@ -85,7 +92,7 @@ function App() {
               <Route path='/list/:path' element={<List prdData={ProductData} onAddCart={addToCart}/>}/>
               <Route path='/searchList' element={<SearchList prdData={ProductData} onAddCart={addToCart} search={search} onChangeSearch={onChangeSearch}/>}/>
               <Route path='/detail/:id' element={<ProductDetail prdData={ProductData} onAddCart={addToCart}/>}/>
-              <Route path='/cart' element={<Cart type="cart" cart={cart} setCart={setCart} prdData={ProductData}/>}/>
+              <Route path='/cart' element={<Cart type="cart" cart={cart} setCart={setCart} prdData={ProductData} onDeleteCart={onDeleteCart}/>}/>
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
           </div>

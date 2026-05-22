@@ -8,7 +8,7 @@ const getPriceNumber = (price) => {
     : Number(String(price).replace(/[^0-9]/g, ""));
 };
 
-const Cart = ({ cart, type }) => {
+const Cart = ({ cart, type,onDeleteCart }) => {
     // 상품별 수량을 저장하는 state
   const [counts, setCounts] = useState({});
 
@@ -63,6 +63,7 @@ const Cart = ({ cart, type }) => {
             counts={counts}
             onClickPlus={onClickPlus}
             onClickMinus={onClickMinus}
+            onDeleteCart={onDeleteCart}
             className="gap-y-20"
           />
         )}

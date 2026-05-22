@@ -4,7 +4,7 @@ import ProductHorizontal from './ProductHorizontal';
 import ProductCart from './ProductCart';
 import { Link } from 'react-router-dom';
 
-const Product = ({ items, limit, type,onAddCart,onClickPlus,onClickMinus,totalPrice,counts }) => {
+const Product = ({ items, limit, type,onAddCart,onClickPlus,onClickMinus,totalPrice,counts,onDeleteCart }) => {
 
     const isHorizontal = type === 'new' || type === 'cart' ;
     // 타입에 따라 그리드/플렉스 레이아웃 결정
@@ -24,7 +24,7 @@ const Product = ({ items, limit, type,onAddCart,onClickPlus,onClickMinus,totalPr
                         {type === 'new'  ? (
                             <ProductHorizontal item={item} index={index} onAddCart={onAddCart}/>
                         ) :  type === 'cart' ? (
-                            <ProductCart item={item} index={index} onClickPlus={onClickPlus} onClickMinus={onClickMinus} counts={counts}/>
+                            <ProductCart item={item} index={index} onClickPlus={onClickPlus} onClickMinus={onClickMinus} onDeleteCart={onDeleteCart} counts={counts}/>
                         )
                         : (
                             <ProductCard item={item} index={index} showIndex={type === 'best'} onAddCart={onAddCart}/>

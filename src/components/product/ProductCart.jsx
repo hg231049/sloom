@@ -2,7 +2,7 @@ import ProductPrice from './ProductPrice';
 
 
 // 1. 가로형 (장바구니 섹션용)
-const ProductCart = ({ item, counts, onClickPlus, onClickMinus }) => {
+const ProductCart = ({ item, counts, onClickPlus, onClickMinus,onDeleteCart }) => {
   
    const count = counts[item.id] || 1;
 
@@ -18,7 +18,7 @@ const ProductCart = ({ item, counts, onClickPlus, onClickMinus }) => {
         <div className="prd-thumb relative max-w-[105px] rounded-[5px] overflow-hidden flex-shrink-0 lg:max-w-[100px]">
             <img src={item.thumb} alt={item.name} className='w-full' />
         </div>
-        <div className="prd-description flex items-baseline justify-between w-full gap-[10px] min-w-0">
+        <div className="prd-description flex items-end justify-between w-full gap-[10px] min-w-0">
             <div >
                 <div className='mb-4 lg:flex lg:flex-col-reverse min-w-0'>
                     <div className="text-sm font-bold leading-[18px] truncate line-clamp-1 lg:text-[20px] lg:leading-[190%]">{item.name}</div>
@@ -29,10 +29,14 @@ const ProductCart = ({ item, counts, onClickPlus, onClickMinus }) => {
                     <button onClick={(e) => onClickPlus(e, item.id)} className='z-10'>+</button>	
                 </div>	
             </div>
-            <div className='flex flex-col items-center gap-[5px] text-brand-color lg:text-[24px] font-bold lg:flex-row'>
+            <div className='flex items-center gap-[5px] text-brand-color lg:text-[24px] font-bold lg:flex-row'>
                 {totalPrice.toLocaleString()}원
                 <span className='hidden text-sm font-normal text-black lg:block'>({count})개</span>
+                <div>
+                    <button onClick={(e)=>onDeleteCart(e,item.id)} className='cursor-pointer '>X</button>
+                </div>
             </div>
+            
         </div>
         
     </div>
