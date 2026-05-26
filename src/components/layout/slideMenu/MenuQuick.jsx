@@ -1,7 +1,7 @@
 
 import { IconMy, IconCart, IconOrder, IconLogout,IconSearch} from '../../icon/Icon'
 import { useNavigate } from 'react-router-dom';
-
+import { Link } from 'react-router-dom';
 const Quick_Menu = [
     { id: 1, name: "마이페이지", link: "#none", icon:IconMy },
     { id: 2, name: "장바구니", link: "/cart", icon:IconCart, cartCnt:true },
@@ -27,16 +27,24 @@ const MenuQuick = ({cartCount,search,onChangeSearch,onClickMenuBar}) => {
         onClickMenuBar(); 
     };
 
+    const onClickQuick = (e) => {
+         onClickMenuBar(); 
+    }
+
     return(
         <div className="menu-quick flex flex-col gap-[15px] border-b-[10px] border-[#FBFBFB] p-[20px_20px_30px_20px]">
             <div className="quick-menu flex items-baseline gap-[10px] ">
                 {Quick_Menu.map((quick)=>
-                    <div key={quick.id} className="flex flex-col gap-[5px] flex-1 ">
-                        <span className="relative mx-auto">
-                            <quick.icon className="w-6 h-6"/>
-                            <em className={`flex justify-center absolute bottom-[-7%] right-[0] w-[12px] h-[12px] leading-[12px] not-italic text-[10px] text-white bg-brand-color rounded-[100%] ${quick.cartCnt ? "block" : "hidden"}`}>{cartCount}</em>
-                        </span>
-                        <p className="text-[14px] text-center">{quick.name}</p>
+                    <div key={quick.id} className="flex-1 ">
+                        <Link to={quick.link} onClick={onClickQuick}>
+                            <div className="flex flex-col gap-[5px]">
+                                <span className="relative mx-auto">
+                                    <quick.icon className="w-6 h-6"/>
+                                    <em className={`flex justify-center absolute bottom-[-7%] right-[0] w-[12px] h-[12px] leading-[12px] not-italic text-[10px] text-white bg-brand-color rounded-[100%] ${quick.cartCnt ? "block" : "hidden"}`}>{cartCount}</em>
+                                </span>
+                                <p className="text-[14px] text-center">{quick.name}</p>
+                            </div>
+                        </Link>
                     </div>
                 )}
             </div>

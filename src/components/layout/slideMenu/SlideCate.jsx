@@ -37,7 +37,7 @@ const SlideCate = () => {
         
     }
     return(
-        <div className="menu-wrap p-5 border-b-[10px] border-[#FBFBFB]">
+        <div className="menu-wrap py-[5px] px-5 border-b-[10px] border-[#FBFBFB]">
                 <div className="cate">
                     <ul>
                         {cateMenu.map((item)=>
