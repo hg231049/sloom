@@ -18,7 +18,7 @@ const New = ({ type,onAddCart,prdData }) => {
                             autoPlay 
                             loop 
                             muted 
-                            playsInline preload="metadata" className="w-full rounded-[10px]">
+                            playsInline preload="metadata" className="block w-full h-full rounded-[10px] object-fill">
                             <source src="https://pub-de7ed6d295f04d408489e1732161f4ac.r2.dev/MAIN/sloom_newBn_pillow.webm" type="video/webm" />
                         </video>
                     </div>
