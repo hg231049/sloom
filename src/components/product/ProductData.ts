@@ -1,4 +1,8 @@
 import { prd1,prd2 } from '../../assets/main';
+interface OptionItem {
+    title: string;
+    text:string[];
+}
 interface ProductItem {
     id: number;
     name: string; 
@@ -7,6 +11,7 @@ interface ProductItem {
     salePrice: number; 
     thumb: string;
     desc :string[];
+    option?:OptionItem[];
 }
 export const ProductData: ProductItem[] = [
     {   id: 1,
@@ -19,6 +24,12 @@ export const ProductData: ProductItem[] = [
             "✔️ 에어펌프 괄사패드 이중케어", 
             "✔️ 5.5L 에어펌프 & 5중 에어셀로 밀착 압박",
             "✔️ 30일 무료체험"
+        ],
+        option : [
+            {
+                title: "사은품 선택",
+                text: ["마사지 크림", "마사지기 파우치","쿨매트"]
+            },
         ],
      },
     { 
