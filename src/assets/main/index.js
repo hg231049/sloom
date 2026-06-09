@@ -1,5 +1,5 @@
 // src/assets/main/index.js
-import logo from './logo.jpg';
+import logo from './logo-m.png';
 import iconLogout from './icon_logout.png';
 import iconMy from './icon_my.png';
 import iconCart from './icon_cart.png';

@@ -18,7 +18,7 @@ const FooterCs = () => {
                 flex flex-col gap-2 lg:gap-4 lg:flex-row
             `}>
                 {Footer_Cs.map((item) => (
-                <div key={item.id} className="flex justify-between flex-row min-h-[92px] text-brand-color p-4 rounded-[5px] bg-white lg:flex-col lg:gap-8 lg:w-[360px]  lg:p-[24px_20px]">
+                <div key={item.id} className="flex justify-between flex-row min-h-[92px] text-font-color p-4 rounded-[5px] bg-white lg:flex-col lg:gap-8 lg:w-[360px]  lg:p-[24px_20px]">
                     <h3 className="text-base font-bold leading-none lg:text-[32px]">{item.name}</h3>
                     <p className="text-xs whitespace-pre-wrap leading-[18px] lg:text-[13px] lg:leading-[22px]">{item.subTxt}</p>
                 </div>

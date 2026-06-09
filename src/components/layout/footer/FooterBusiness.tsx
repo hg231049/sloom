@@ -15,7 +15,7 @@ const FooterBusiness = () => {
                 flex flex-row gap-3 lg:flex-col
                 [&_li]:flex-1
                 [&_li]:p-[7px_0_8px] [&_li]:border-b [&_li]:border-brand-color 
-                [&_a]:block [&_a]:text-brand-color [&_a]:text-xs [&_a]:tracking-[-0.024rem]
+                [&_a]:block [&_a]:text-font-color [&_a]:text-xs [&_a]:tracking-[-0.024rem]
                 [&_li]:relative 
                 [&_li]:after:content-[''] 
                 [&_li]:after:absolute [&_li]:after:right-0 [&_li]:after:top-1/2 [&_li]:after:-translate-y-1/2 

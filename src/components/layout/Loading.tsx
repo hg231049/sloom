@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import Logo from '../layout/Logo';
 
 interface LoadingProps {
     isHide:boolean;
@@ -13,7 +13,7 @@ const Loading = ({isHide}:LoadingProps) => {
             }`}
             >
             <div className="loader-inner text-center">
-                <img src="https://cdn.imweb.me/upload/S20200901a942bae14250b/9658df763d29d.png" alt="SLOOM" className='custom-loader-img max-w-[181px] w-[80%] mx-auto  ' />
+                <Logo/>
             </div>
             <style>
                 {`
