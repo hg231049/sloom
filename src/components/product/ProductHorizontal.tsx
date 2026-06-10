@@ -1,5 +1,5 @@
 import ProductPrice from './ProductPrice';
-import { IconCart } from '../icon/Icon';
+import { PiHandbagSimpleThin } from "react-icons/pi";
 import {ProductItem} from './ProductData'
 
 interface ProductHorizontalProps {
@@ -20,7 +20,7 @@ const ProductHorizontal = ({ item,onAddCart }:ProductHorizontalProps) => (
                     onAddCart(item);
                 }}
             >
-            <IconCart/>
+            <PiHandbagSimpleThin/>
         </span>
     </div>
     <div className="prd-description flex flex-col gap-[10px] min-w-0">

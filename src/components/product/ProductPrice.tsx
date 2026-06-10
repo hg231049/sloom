@@ -21,7 +21,7 @@ const ProductPrice = ({ orgPrice, salePrice, className = "" }:ProductPriceProps)
   return (
       <div className={`prd-price-wrap ${className}`}>
         {orgPrice !== salePrice && 
-          <div className='text-xs text-[#ACACAC] line-through lg:text-[18px]'>{formatPrice(orgPrice)}</div>
+          <div className='text-xs text-[#ACACAC] line-through leading-[2] lg:text-[18px]'>{formatPrice(orgPrice)}</div>
         }
         <div className='flex gap-[7px] items-center text-base font-bold lg:text-[24px] [.new_&]:lg:flex-col [.new_&]:lg:items-baseline [.new_&]:lg:gap-0'>
           {displayPercent > 0 && (

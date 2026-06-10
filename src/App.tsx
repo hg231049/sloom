@@ -46,8 +46,10 @@ function App() {
             thumb: item.thumbnail, // 썸네일(thumbnail) ➡️ 내 이미지(thumb)로 매칭!
             desc: [
               item.description, 
-              `⭐ 평점: ${item.rating} / 5`, 
-              `📦 현재 남은 재고: ${item.stock}개`
+              `<div class="flex gap-[15px] text-gray-600">
+              <div>평점: ${item.rating}</div>
+              <div>재고: ${item.stock}개</div>
+              </div>`, 
             ]
           };
         });

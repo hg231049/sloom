@@ -1,4 +1,5 @@
 import ProductPrice from './ProductPrice';
+import { PiTrashLight } from "react-icons/pi";
 import {ProductItem} from './ProductData'
 
 interface ProductCartProps {
@@ -40,11 +41,11 @@ const ProductCart = ({ item, counts, onClickPlus, onClickMinus,onDeleteCart }:Pr
                 </div>	
             </div>
             {/* 가격 + 삭제 버튼 */}
-            <div className='flex items-center gap-[5px] text-brand-color lg:text-[24px] font-bold lg:flex-row'>
+            <div className='flex items-baseline gap-[5px] text-brand-color lg:text-[24px] font-bold lg:flex-row'>
                 {totalPrice.toLocaleString()}원
                 <span className='hidden text-sm font-normal text-black lg:block'>({count})개</span>
                 <div>
-                    <button onClick={(e)=>onDeleteCart(e,item.id)} className='cursor-pointer '>X</button>
+                    <button onClick={(e)=>onDeleteCart(e,item.id)} className='text-black align-middle cursor-pointer '><PiTrashLight size={17}/></button>
                 </div>
             </div>
             

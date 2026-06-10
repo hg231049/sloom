@@ -1,5 +1,5 @@
 import ProductPrice from './ProductPrice';
-import { IconCart } from '../icon/Icon';
+import { PiHandbagSimpleThin } from "react-icons/pi";
 import {ProductItem} from './ProductData'
 
 interface ProductCardProps {
@@ -29,7 +29,7 @@ const ProductCard = ({ item, index, showIndex,onAddCart }:ProductCardProps) => (
                 onAddCart(item);
             }}
         >
-            <IconCart/>
+            <PiHandbagSimpleThin/>
         </span>
     </div>
     <div className="prd-description">
